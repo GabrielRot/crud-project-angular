@@ -1,0 +1,85 @@
+@use 'styles' as *;
+
+.techno-button {
+  width: 100%;
+  padding: 0.8em;
+  margin-top: 1rem;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 2px;
+  border-color: $primary-color;
+  color: $primary-color;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+  overflow: hidden;
+
+  &:hover, &:focus {
+    background-color: $primary-color;
+    color: $bg-color;
+    box-shadow: 0 0 25px $primary-color;
+    outline: none;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  .techno-button-text {
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover .techno-button-text {
+      opacity: 0;
+  }
+
+
+  &::before, &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    background-color: $primary-color;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover::before, 
+  &:focus::before {
+    opacity: 1;
+    color: $secondary-color;
+    animation: glitch-anim $glitch-anim-duration cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+    color: $bg-color;
+    animation: glitch-anim $glitch-anim-duration cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .techno-button:hover::before,
+  .techno-button:focus::before,
+  .techno-button:hover::after,
+  .techno-button:focus::after {
+    animation: none;
+    opacity: 0;
+ }
+
+ .techno-button:hover .techno-button-text {
+   opacity: 1;
+ }
+}

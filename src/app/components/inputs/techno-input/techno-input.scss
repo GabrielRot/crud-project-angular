@@ -1,0 +1,79 @@
+@use 'styles' as *;
+
+.techno-input-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+
+  .techno-input-label {
+    position: absolute;
+    top: 0.75rem;
+    left: 0;
+    font-size: 1rem;
+    color: $primary-color;
+    opacity: 0.6;
+    letter-spacing: 0.1em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+  }
+
+  input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(0, 242, 234, 0.3);
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    color: $text-color;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
+  
+    &:focus {
+      border-color: $primary-color;
+    }
+
+    &:focus + .techno-input-label, &:not(:placeholder-shown) + .techno-input-label {
+      top: -1.2rem;
+      font-size: 0.8rem;
+      opacity: 1;
+    }
+
+
+    &:focus + .techno-input-label::before, 
+    &:focus + .techno-input-label::after {
+      content: attr(data-text);
+      position: absolute;
+      background-color: $bg-color;
+      opacity: 1;
+    }
+
+    &:focus + .techno-input-label::before {
+      color: $secondary-color;
+      animation: glitch-anim $glitch-anim-duration cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+
+    &:focus + .techno-input-label::after {
+      color: $primary-color;
+      animation: glitch-anim $glitch-anim-duration cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .techno-input-container input:focus + .techno-input-label::before,
+  .techno-input-container input:focus + .techno-input-label::after {
+    animation: none;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,11 @@
+@use 'styles' as *;
+
+.login-container {
+  background-color: $bg-color;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}

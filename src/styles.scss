@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+$bg-color: #0D0D0D;
+$primary-color: #00F2EA;
+$secondary-color: #A855F7;
+$text-color: #E5E5E5;
+$font-family: "Fira Code", Consolas, "Courier New", Courier, monospace;
+$glitch-anim-duration: 0.5s;
+
+body {
+  margin: 0;
+  font-family: $font-family;
+  color: $primary-color; 
+}
+
+@keyframes glitch-anim {
+  0% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+  20% {
+    transform: translate(-5px, 3px);
+    clip-path: inset(50% 0 20% 0);
+  }
+  40% {
+    transform: translate(3px, -2px);
+    clip-path: inset(20% 0 60% 0);
+  }
+  60% {
+    transform: translate(-4px, 2px);
+    clip-path: inset(80% 0 5% 0);
+  }
+  80% {
+    transform: translate(4px, -3px);
+    clip-path: inset(30% 0 45% 0);
+  }
+  100% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
