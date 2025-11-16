@@ -1,4 +1,5 @@
 <div class="sign-in-container">
-  <app-techno-input type="text" id="email" name="email" text="E-mail"/>
-  <app-techno-button text="Login"></app-techno-button>
+  <app-techno-input [requiredInput]="true" type="text" id="email" name="email" text="E-mail"/>
+  <app-techno-input [requiredInput]="true" type="password" id="password" name="password" text="Senha"/>
+  <app-techno-button text="Login" (click)="makeLogin()"></app-techno-button>
 </div>

@@ -1,4 +1,7 @@
 <div class="techno-input-container">
-  <input type="{{type}}" id="{{id}}" name="{{name}}" placeholder="{{placeholder}}" />
+  <input #technoInput [(ngModel)]="inputValue" type="{{type}}" id="{{id}}" name="{{name}}" placeholder="{{placeholder}}" />
   <label for="{{id}}" class="techno-input-label" [attr.data-text]="text">{{text}}</label>
+  <div class="required-techno-input-container" *ngIf="showRequiredText" id="{{id}}-required-container">
+    <span>{{text}} não informado. Por favor informe-o</span>
+  </div>
 </div>
