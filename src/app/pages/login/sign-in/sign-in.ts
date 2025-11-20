@@ -3,6 +3,7 @@ import { TechnoInput } from "../../../components/inputs/techno-input/techno-inpu
 import { TechnoButton } from "../../../components/buttons/techno-button/techno-button";
 import { FormsModule } from '@angular/forms';
 import { SignInService } from '../../../core/services/sign-in.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,7 +12,7 @@ import { SignInService } from '../../../core/services/sign-in.service';
   styleUrl: './sign-in.scss',
 })
 export class SignIn {
-  constructor(private signInService: SignInService) {}
+  constructor( private router: Router, private signInService: SignInService) {}
 
   @ViewChildren(TechnoInput) inputs!: QueryList<TechnoInput>;
 
@@ -36,14 +37,15 @@ export class SignIn {
       "password": password
     };
 
-    // this.signInService.signIn(jsonData).subscribe({
-    //   next: (res) => {
-    //     alert('teste');
-    //   },
-    //   error: (err) => {
-    //     alert(err.message);
-    //   }
-    // })
+    this.signInService.signIn(jsonData).subscribe({
+      next: (res) => {
+        console.log(localStorage.getItem('access_token'));
+        this.router.navigate(['/home']);
+      },
+      error: (err) => {
+        alert(err.message);
+      }
+    })
   }
 
 }
