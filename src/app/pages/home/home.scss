@@ -1,0 +1,11 @@
+@use 'styles' as *;
+
+.home-container {
+  background-color: $bg-color;
+  height: 100vh;
+
+  .home-contents-container {
+    display: flex;
+    height: 100%;
+  }
+}

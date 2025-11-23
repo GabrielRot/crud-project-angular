@@ -55,7 +55,7 @@
     transition: opacity 0.2s ease;
   }
 
-  &:hover::before, 
+  &:hover::before,
   &:focus::before {
     opacity: 1;
     color: $secondary-color;

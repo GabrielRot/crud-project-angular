@@ -43,7 +43,7 @@
 
     &:not(.input-not-filled) {
       border-bottom-color: rgba(0, 242, 234, 0.3);
-    } 
+    }
 
     &.input-not-filled {
       border-bottom-color: rgba(189, 0, 41, 0.3);
@@ -53,7 +53,7 @@
       &:not(.input-not-filled) {
         border-color: $primary-color;
       }
-      
+
       &.input-not-filled {
         border-color: #bd0029;
       }
@@ -65,7 +65,7 @@
       opacity: 1;
     }
 
-    &:focus + .techno-input-label::before, 
+    &:focus + .techno-input-label::before,
     &:focus + .techno-input-label::after {
       content: attr(data-text);
       position: absolute;

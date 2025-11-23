@@ -9,7 +9,13 @@ $glitch-anim-duration: 0.5s;
 body {
   margin: 0;
   font-family: $font-family;
-  color: $primary-color; 
+  color: $primary-color;
+}
+
+.prevent-user-selection {
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-user-select: none;
 }
 
 @keyframes glitch-anim {

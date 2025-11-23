@@ -1,0 +1,43 @@
+@use 'styles' as *;
+@use 'sass:color';
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: color.adjust($bg-color, $lightness: 8%);
+  padding: 10px;
+
+  .navbar-page-breadcrumb {
+    margin-left: 20px;
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-right {
+    margin-left: auto;
+  }
+
+  .navbar-button {
+    border-radius: 50%;
+    cursor: pointer;
+    min-width: 30px;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: color.adjust($bg-color, $lightness: 10%);
+    }
+
+    &:active {
+      background-color: color.adjust($bg-color, $lightness: 5%);
+    }
+
+  }
+}
