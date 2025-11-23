@@ -4,6 +4,7 @@ import { TechnoButton } from "../../../components/buttons/techno-button/techno-b
 import { FormsModule } from '@angular/forms';
 import { SignInService } from '../../../core/services/sign-in.service';
 import { Router } from '@angular/router';
+import { NotificationService } from '../../../core/services/notification.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrl: './sign-in.scss',
 })
 export class SignIn {
-  constructor( private router: Router, private signInService: SignInService) {}
+  constructor( private router: Router, private signInService: SignInService, private notify: NotificationService) {}
 
   @ViewChildren(TechnoInput) inputs!: QueryList<TechnoInput>;
 
@@ -39,11 +40,14 @@ export class SignIn {
 
     this.signInService.signIn(jsonData).subscribe({
       next: (res) => {
-        console.log(localStorage.getItem('access_token'));
         this.router.navigate(['/home']);
       },
       error: (err) => {
-        alert(err.message);
+        if (err.status == 401) {
+          this.notify.show({ "icon": "fa-warning", "type": "error", "title": "Erro ao fazer login", "message": "E-mail ou senha inválido" });
+        } else {
+          this.notify.show({ "icon": "fa-warning", "type": "error", "title": "Erro ao fazer login", "message": "Ocorreu um erro interno. Tente novamente mais tarde" });
+        }
       }
     })
   }

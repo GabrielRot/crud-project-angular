@@ -1,5 +1,10 @@
-<div>
-  <div>
-    <span class="fa fa-plus"></span>
+<div class="side-menu-container">
+  <div routerLink="/home/providers" (click)="setPage('Fornecedores')" class="side-menu-option" data-title="Fornecedores">
+    <span class="fa fa-truck"></span>
+    <span>Fornecedores</span>
+  </div>
+  <div routerLink="/home/about" (click)="setPage('Quem somos')" class="side-menu-option" data-title="Quem somos">
+    <span class="fa fa-circle-info"></span>
+    <span>Quem somos</span>
   </div>
 </div>
