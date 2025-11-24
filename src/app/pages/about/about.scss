@@ -1,3 +1,80 @@
+@use 'styles' as *;
+
 .about-container {
-  
+  .about-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-height: 220px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .about-title {
+    font-size: 28px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .about-aluno-container {
+    display: grid;
+    gap: 6px;
+  }
+
+  .about-nome-aluno-container {
+    .fa {
+      margin-right: 6px;
+    }
+
+    span {
+      &:not(:last-of-type) {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .about-ra-aluno-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .fa {
+      margin-right: 6px;
+    }
+
+    span {
+      &:not(:last-of-type) {
+        font-weight: 600;
+      }
+
+      &:nth-of-type(2) {
+        margin-right: 2px;
+      }
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active {
+      text-decoration: none;
+    }
+  }
+}
+
+.about-divider {
+  height: 1px;
+  background-color: $primary-color;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 12px;
+  margin-top: 12px;
 }

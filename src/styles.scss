@@ -6,6 +6,12 @@ $text-color: #E5E5E5;
 $font-family: "Fira Code", Consolas, "Courier New", Courier, monospace;
 $glitch-anim-duration: 0.5s;
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: $font-family;
