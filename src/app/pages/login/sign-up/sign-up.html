@@ -1,9 +1,9 @@
-<div class="sign-in-container">
-
-  <app-techno-input [requiredInput]="true" type="text" id="nome" name="nome" text="Nome"></app-techno-input>
-  <app-techno-input [requiredInput]="true" type="email" id="email" name="email" text="E-mail"></app-techno-input>
-  <app-techno-input [requiredInput]="true" type="password" id="senha" name="senha" text="Senha"></app-techno-input>
-
-  <app-techno-button text="Cadastrar" (click)="cadastrar()"> </app-techno-button>
-
+<div class="sign-up-container">
+  <app-technocard>
+    <app-techno-input [requiredInput]="true" type="text" id="nome" name="nome" text="Nome"></app-techno-input>
+    <app-techno-input [requiredInput]="true" type="email" id="email" name="email" text="E-mail"></app-techno-input>
+    <app-techno-input [requiredInput]="true" type="password" id="senha" name="senha" text="Senha"></app-techno-input>
+    <app-techno-button text="Cadastrar" (click)="cadastrar()"></app-techno-button>
+    <app-techno-button text="Login" (click)="redirectToLogin()"></app-techno-button>
+  </app-technocard>
 </div>

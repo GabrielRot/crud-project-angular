@@ -1,3 +1,9 @@
+@use 'sass:color';
+
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+@import 'ag-grid-community/styles/ag-theme-quartz.css';
+
 /* You can add global styles to this file, and also import other style files */
 $bg-color: #0D0D0D;
 $primary-color: #00F2EA;
@@ -10,6 +16,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: $bg-color;
 }
 
 body {
@@ -49,4 +56,36 @@ body {
     transform: translate(0);
     clip-path: inset(0 0 0 0);
   }
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  // background-color: color.adjust($bg-color, $lightness: 20%);
+  min-height: 30px;
+  min-width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: $primary-color;
+  border-radius: 12px;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: 16px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $primary-color;
+  padding: 10px;
+
+  &:hover {
+    background-color: color.adjust($bg-color, $lightness: 15%);
+  }
+
+  &:active {
+    background-color: color.adjust($bg-color, $lightness: 10%);
+  }
+
+  @extend .prevent-user-selection;
 }

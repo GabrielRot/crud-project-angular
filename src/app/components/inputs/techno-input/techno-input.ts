@@ -25,6 +25,10 @@ export class TechnoInput {
     return this.inputValue;
   }
 
+  setInputValue(value: string): void {
+    this.inputValue = value;
+  }
+
   showRequiredText: boolean = false;
 
   validateField(): boolean {
@@ -42,7 +46,7 @@ export class TechnoInput {
       this.technoInput.nativeElement.classList.add('input-not-filled');
 
       this.showRequiredText = true;
-      
+
       this.technoInput.nativeElement.addEventListener('keyup', removeRequiredStyle);
 
       return false;
