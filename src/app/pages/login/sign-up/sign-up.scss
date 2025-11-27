@@ -1,0 +1,15 @@
+@use 'styles' as *;
+
+.sign-up-container {
+  background-color: $bg-color;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  app-technocard {
+    width: 280px;
+    height: 400px;
+  }
+}

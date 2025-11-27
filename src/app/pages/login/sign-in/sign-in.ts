@@ -52,4 +52,8 @@ export class SignIn {
     })
   }
 
+  signUp() {
+    this.router.navigate(['sign-up']);
+  }
+
 }

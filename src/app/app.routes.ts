@@ -6,6 +6,7 @@ import { Login } from './pages/login/login';
 import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
 import { Providers } from './pages/providers/providers';
+import { CreateProvider } from './pages/providers/create-provider/create-provider';
 
 export const routes: Routes = [
   {
@@ -22,6 +23,7 @@ export const routes: Routes = [
     component: Home,
     canActivate: [authGuard],
     children: [
+      { path: 'create-provider', component: CreateProvider },
       { path: 'providers', component: Providers },
       { path: 'about', component: About },
     ]

@@ -1,1 +1,13 @@
-<p>Provider work!</p>
+<div class="providers-container">
+  <button mat-raised-button class="btn btn-Primary" (click)="openForm()">
+    <span class="fa fa-plus"></span>
+    <span>Novo fornecedor</span>
+  </button>
+  <ag-grid-angular
+    class="ag-theme-alpine"
+    style="width: 100%; height: 100%;"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+  >
+  </ag-grid-angular>
+</div>

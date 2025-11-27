@@ -1,29 +1,35 @@
 <div class="about-container">
   <app-technocard>
+    <div class="about-image">
+      <img src="logos/unisalesiano-logo.png" alt="logo">
+    </div>
     <div class="about-title">
       <span>Somos Alunos Universitários do Curso de T.D.S no UniSalesiano, Unidos pela Paixão em Tecnologia e Inovação</span>
     </div>
     <div class="about-studients">
       <div class="about-aluno-container">
         <div class="about-nome-aluno-container">
+          <span class="fa fa-user"></span>
           <span>Nome: </span>
           <span>Davi Barbara Carvalho</span>
         </div>
-        <div class="about-ra-aluno-container">
+        <div class="about-ra-aluno-container" (click)="copyRA($event)" title="Copiar">
           <span class="fa fa-clone"></span>
           <span>RA:</span>
-          <span>220455</span>
+          <span class="RA-value">220455</span>
         </div>
       </div>
+      <div class="about-divider"></div>
       <div class="about-aluno-container">
         <div class="about-nome-aluno-container">
+          <span class="fa fa-user"></span>
           <span>Nome: </span>
           <span>Gabriel Rodrigues Teixeira</span>
         </div>
-        <div class="about-ra-aluno-container">
+        <div class="about-ra-aluno-container" (click)="copyRA($event)" title="Copiar">
           <span class="fa fa-clone"></span>
           <span>RA:</span>
-          <span>220193</span>
+          <span class="RA-value">220193</span>
         </div>
       </div>
     </div>

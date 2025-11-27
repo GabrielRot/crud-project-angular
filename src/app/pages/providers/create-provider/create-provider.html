@@ -1,0 +1,20 @@
+<app-technocard>
+  <div style="display: flex; align-items: center; gap: 16px;">
+    <app-techno-input type="number" text="ID" id="id" name="id" [requiredInput]="false"></app-techno-input>
+    <app-techno-button text="Buscar fornecedor" (click)="searchProvider()"></app-techno-button>
+  </div>
+  <app-techno-input type="text" text="Nome" id="nome" name="nome" [requiredInput]="true"></app-techno-input>
+  <app-techno-input type="text" text="CNPJ" id="cnpj" name="cnpj" [requiredInput]="true"></app-techno-input>
+  <div style="display: flex; align-items: center; gap: 16px;">
+    <app-techno-input type="text" text="CEP" id="cep" name="cep" [requiredInput]="true"></app-techno-input>
+    <app-techno-button text="Buscar" (click)="searchCep()"></app-techno-button>
+  </div>
+  <app-techno-input type="text" text="Estado" id="estado" name="estado" [requiredInput]="true"></app-techno-input>
+  <app-techno-input type="text" text="Bairro" id="bairro" name="bairro" [requiredInput]="true"></app-techno-input>
+  <app-techno-input type="text" text="Rua" id="rua" name="rua" [requiredInput]="true"></app-techno-input>
+  <app-techno-input type="text" text="Complemento" id="complemento" name="complemento" [requiredInput]="false"></app-techno-input>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 16px;">
+    <app-techno-button text="Deletar" (click)="deleteProvider()"></app-techno-button>
+    <app-techno-button text="Salvar" (click)="saveProvider()"></app-techno-button>
+  </div>
+</app-technocard>
